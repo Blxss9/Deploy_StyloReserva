@@ -1,0 +1,46 @@
+# Activar el motor de reescritura
+RewriteEngine On
+
+# Establecer el directorio base
+RewriteBase /
+
+# Si el archivo o directorio no existe físicamente
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Redirigir todas las peticiones a index.php
+RewriteRule ^(.*)$ index.php/$1 [L,QSA]
+
+# Prevenir la visualización de errores PHP en producción
+php_flag display_errors off
+php_value error_reporting E_ALL
+
+# Forzar HTTPS (descomenta si tienes SSL)
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Configurar cabeceras para API
+<IfModule mod_headers.c>
+    SetEnvIf Request_URI "^/api/" API_REQUEST
+    Header set Content-Type "application/json" env=API_REQUEST
+    Header set Access-Control-Allow-Origin "*" env=API_REQUEST
+    Header set Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS" env=API_REQUEST
+    Header set Access-Control-Allow-Headers "Content-Type, Authorization" env=API_REQUEST
+</IfModule>
+
+# Proteger el archivo .htaccess
+<Files .htaccess>
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Prevenir listado de directorios
+Options -Indexes
+
+# Manejar errores 404
+ErrorDocument 404 /404.php
+
+# Regla específica para APIs
+<LocationMatch "^/api/">
+    Header set Content-Type "application/json"
+</LocationMatch>

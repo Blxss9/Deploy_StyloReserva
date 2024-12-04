@@ -1,0 +1,87 @@
+body {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    min-height: 100vh;
+}
+
+.seccion {
+    backdrop-filter: blur(8px);
+    background-color: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.servicio {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    
+    &:hover {
+        background-color: #f8fafc;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 15px -3px rgb(59 130 246 / 0.1);
+    }
+    
+    &.seleccionado {
+        background-color: #eff6ff;
+        border: 2px solid #3b82f6;
+        box-shadow: 0 0 0 4px rgb(59 130 246 / 0.1);
+    }
+    
+    .nombre-servicio {
+        font-weight: 700;
+        font-size: 1.25rem;
+        margin-bottom: 0.75rem;
+        color: #1e40af;
+    }
+    
+    .precio-servicio {
+        color: #4b5563;
+        font-weight: 600;
+    }
+}
+
+.contenedor-servicio {
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 0.75rem;
+    margin-bottom: 0.75rem;
+    
+    &:last-of-type {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+    
+    p {
+        margin-bottom: 0.5rem;
+        
+        span {
+            font-weight: 700;
+        }
+    }
+
+    .hora-disponible {
+        transition: all 300ms ease;
+    }
+
+    .hora-disponible:hover {
+    background-color: #3b82f6;
+    color: white;
+        cursor: pointer;
+    }
+
+    
+}
+
+.hora-disponible {
+    transition: all 300ms ease;
+}
+
+.hora-disponible:hover {
+    background-color: #3b82f6;
+    color: white;
+    cursor: pointer;
+}

@@ -1,0 +1,21 @@
+# Redirigir todo al directorio public
+RewriteEngine On
+RewriteRule ^$ public/ [L]
+RewriteRule (.*) public/$1 [L]
+
+# Denegar acceso a directorios sensibles
+RewriteRule ^includes/ - [F,L]
+RewriteRule ^vendor/ - [F,L]
+RewriteRule ^models/ - [F,L]
+RewriteRule ^controllers/ - [F,L]
+
+# Proteger archivos sensibles
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+<FilesMatch "^(composer\.json|composer\.lock|package\.json|package-lock\.json)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>

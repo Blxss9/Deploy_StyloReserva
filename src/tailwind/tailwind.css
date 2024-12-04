@@ -1,0 +1,7 @@
+/* Archivo Principal de Tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Importa los estilos de Flowbite */
+@import "flowbite";

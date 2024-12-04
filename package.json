@@ -1,0 +1,44 @@
+{
+  "name": "proyecto_styloreserva",
+  "version": "1.0.0",
+  "description": "Aplicación Web StyloReserva - Proyecto de Título",
+  "author": "Matías / Yustin / Nicola",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "tailwind:watch": "npx tailwindcss -i ./src/tailwind/tailwind.css -o ./public/build/css/tailwind.css --watch",
+    "dev": "gulp dev",
+    "build": "gulp build"
+  },
+  "keywords": [
+    "barbería",
+    "reservación",
+    "salones de belleza",
+    "peluquería"
+  ],
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "browser-sync": "^3.0.3",
+    "cssnano": "^7.0.6",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-cache": "^1.1.3",
+    "gulp-clean": "^0.4.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-notify": "^5.0.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^10.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-terser-js": "^5.2.2",
+    "gulp-webp": "^4.0.1",
+    "sass": "^1.80.6",
+    "tailwindcss": "^3.4.14",
+    "terser": "^5.36.0"
+  },
+  "dependencies": {
+    "flowbite": "^2.5.2"
+  }
+}
